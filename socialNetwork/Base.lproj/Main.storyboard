@@ -10,7 +10,7 @@
         <!--Sign InVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="socialNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="BYZ-38-t0r" customClass="SignInVC" customModule="socialNetwork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,9 +64,12 @@
                                     <constraint firstAttribute="height" constant="80" id="vP8-Z1-AWH"/>
                                 </constraints>
                                 <state key="normal" image="f"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eyb-fk-Yx7"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v1T-Xq-Dfy">
-                                <rect key="frame" x="30" y="331.5" width="354" height="99"/>
+                                <rect key="frame" x="30" y="451.5" width="354" height="97.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DSn-k2-xS3" customClass="FancyField" customModule="socialNetwork" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="19.5"/>
@@ -74,12 +77,12 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVf-ki-rHg" customClass="FancyField" customModule="socialNetwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="29.5" width="354" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="29.5" width="354" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDC-VM-4Hc" customClass="FancyButton" customModule="socialNetwork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="59" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="57.5" width="354" height="40"/>
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Sz4-oe-NMR"/>
@@ -87,6 +90,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7id-xn-XZP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -105,12 +111,16 @@
                             <constraint firstItem="v1T-Xq-Dfy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UAB-qf-PZn"/>
                             <constraint firstItem="P4s-cT-LI8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b1x-bq-oJg"/>
                             <constraint firstAttribute="bottom" secondItem="cul-r7-amb" secondAttribute="bottom" id="kA7-MN-Pam"/>
-                            <constraint firstItem="v1T-Xq-Dfy" firstAttribute="top" secondItem="s9T-cR-TtX" secondAttribute="bottom" constant="30" id="ooI-IW-46R"/>
+                            <constraint firstItem="v1T-Xq-Dfy" firstAttribute="top" secondItem="s9T-cR-TtX" secondAttribute="bottom" constant="150" id="ooI-IW-46R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v1T-Xq-Dfy" secondAttribute="trailing" constant="30" id="qn4-1X-5rF"/>
                             <constraint firstItem="cul-r7-amb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vcG-Iu-ldr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="DSn-k2-xS3" id="rWw-BB-UR1"/>
+                        <outlet property="passwordTextField" destination="pVf-ki-rHg" id="4dM-uo-AKJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
