@@ -10,5 +10,6 @@ platform :ios, “9.0”
                  pod 'Firebase/Auth'
                  pod 'Firebase/Storage'
                  pod 'FBSDKLoginKit'
+                 pod 'SwiftKeychainWrapper'
 
             end
