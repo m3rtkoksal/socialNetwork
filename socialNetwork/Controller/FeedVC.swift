@@ -10,11 +10,14 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
+    
+    @IBOutlet weak var addImage: CircleView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
@@ -32,6 +35,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
         DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
@@ -45,6 +52,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             self.tableView.reloadData()
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            addImage.image = image
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func addImagePressed(_ sender: Any) {
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func signOutPressed(_ sender: UIButton) {
