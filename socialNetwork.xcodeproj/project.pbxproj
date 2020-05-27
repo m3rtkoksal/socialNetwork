@@ -24,6 +24,7 @@
 		8E523DAB246EAC5600EE9EE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E523DAA246EAC5600EE9EE4 /* Assets.xcassets */; };
 		8E523DAE246EAC5600EE9EE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E523DAC246EAC5600EE9EE4 /* LaunchScreen.storyboard */; };
 		8E523DB6246EAD0A00EE9EE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E523DB5246EAD0A00EE9EE4 /* GoogleService-Info.plist */; };
+		8E8F5791247E763100D1C1EF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F5790247E763100D1C1EF /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		8E523DAD246EAC5600EE9EE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E523DAF246EAC5600EE9EE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E523DB5246EAD0A00EE9EE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E8F5790247E763100D1C1EF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CFA760E410311D7CCB9A7E60 /* Pods-socialNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialNetwork.debug.xcconfig"; path = "Target Support Files/Pods-socialNetwork/Pods-socialNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		EAF8ABCB87C7BECFF34A14EA /* Pods-socialNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-socialNetwork.release.xcconfig"; path = "Target Support Files/Pods-socialNetwork/Pods-socialNetwork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 		8E2BD552247295D9004CDCC6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8E8F5790247E763100D1C1EF /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				8E5174112472C72800FE0F06 /* RoundButton.swift in Sources */,
 				8E5174152472CB8B00FE0F06 /* FancyButton.swift in Sources */,
 				8E1EAA262477F10E0067F0C9 /* DataService.swift in Sources */,
+				8E8F5791247E763100D1C1EF /* Post.swift in Sources */,
 				8E51740F2472C23100FE0F06 /* Constants.swift in Sources */,
 				8E523DA6246EAC5600EE9EE4 /* SignInVC.swift in Sources */,
 				8E523DA2246EAC5600EE9EE4 /* AppDelegate.swift in Sources */,

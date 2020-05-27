@@ -14,12 +14,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var posts = [Post]()
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
+        let post = posts[indexPath.row]
+        print(post.caption)
         return cell
     }
 
@@ -29,10 +33,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         
         DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
-            print(snapshot.value)
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot {
+                    print(snap)
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let id = snap.key
+                        let post = Post(postID: id, postData: postDict)
+                        self.posts.append(post)
+                    }
+                }
+            }
+            self.tableView.reloadData()
         }
-
-        
     }
     
     @IBAction func signOutPressed(_ sender: UIButton) {
